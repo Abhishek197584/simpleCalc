@@ -156,8 +156,102 @@
 <button class="calc" id="button" onclick="currentValue+='.'; document.querySelector('#text').value =  currentValue;" >.</button>
 </div>
     </div>
+<br>
+<h1>Bat ball Game </h1>
+<br>
+<button class="calc" style="border-radius: 5px;" 
+onclick=" yourMsg= `you have clicked bat `;
+let randomChoice = Math.random() * 3;
+let computerChoice ;
+if(randomChoice>0 && randomChoice<=1){
+    computerChoice = `Bat`;
+   
+}
+ else if(randomChoice>1 && randomChoice<=2){
+    computerChoice=`Ball`;
+    
+}
+ else {
+    computerChoice=`Wicket`;
+    
+}
+computerMsg= `computer chosen ${computerChoice}`;
+
+if(computerChoice===`Bat`){
+    resultMsg = `match tied`;
+}else if(computerChoice === `Ball`){
+     resultMsg = `You won`;
+
+}
+else{
+    resultMsg = `computer won`;
+    
+}
+alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)
+
+" >Bat</button>
+<button class="calc" style="border-radius: 5px;" onclick="yourMsg= `you have clicked ball `;
+let randomChoice = Math.random() * 3;
+let computerChoice ;
+if(randomChoice>0 && randomChoice<=1){
+    computerChoice = `Bat`;
+   
+}
+ else if(randomChoice>1 && randomChoice<=2){
+    computerChoice=`Ball`;
+    
+}
+ else {
+    computerChoice=`Wicket`;
+    
+}
+computerMsg= `computer chosen ${computerChoice}`;
+
+if(computerChoice===`Bat`){
+    resultMsg = `computer won`;
+}else if(computerChoice === `Ball`){
+     resultMsg = `match tied`;
+
+}
+else{
+    resultMsg = `you won`;
+    
+}
+alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)"
 
 
+>ball</button>
+<button class="calc"style="border-radius: 5px;" 
+onclick="yourMsg= `you have clicked wicket `;
+let randomChoice = Math.random() * 3;
+let computerChoice ;
+if(randomChoice>0 && randomChoice<=1){
+    computerChoice = `Bat`;
+   
+}
+ else if(randomChoice>1 && randomChoice<=2){
+    computerChoice=`Ball`;
+    
+}
+ else {
+    computerChoice=`Wicket`;
+    
+}
+computerMsg= `computer chosen ${computerChoice}`;
+
+if(computerChoice===`Bat`){
+    resultMsg = `you won`;
+}else if(computerChoice === `Ball`){
+     resultMsg = `computer won`;
+
+}
+else{
+    resultMsg = `match tied`;
+    
+}
+alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)"
+
+>wicket</button>
 
 </center>
 <script>
