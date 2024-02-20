@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font
+	-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Navbar </title>
+    <style>
+        
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-between;
+    align-items: stretch;
+    
+    background-color: black;
+            overflow: hidden;
+            padding: 1rem;
+        }
+        .list ul li{
+            float: left;
+            list-style-type:none;
+        }
+        
+        .list ul li a{
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+        }
+        .logo h2{
+            color: white;
+        }
+        a:hover{
+            background-color: chartreuse;
+            border-radius: 6px;
+        }
+        li .dropdown{
+            display: inline-block;
+        }
+        li .dropdown-content{
+            display: none;
+            border-radius: 6px;
+            margin-top: 10px;
+
+        }
+        .dropdown:hover .dropdown-content{
+         display: block;
+         position:absolute;
+         background-color: black;
+         color: white;
+         z-index: 1;
+         min-width: 160px;
+        }
+        .dropdown-content a{
+            display: block;
+        }
+
+        button{
+            font-size: 2rem;
+            margin:1rem;
+            padding: 10px;
+        }
+      .green{
+        background-color: #d5ff95;
+        border: none;
+        padding: 10px 40px;
+        border-radius: 20px;
+      }
+      .wishlist{
+        border: solid;
+        padding: 10px 50px;
+        border-radius: 20px;
+      }
+
+     #calculator{
+          margin: 3rem;
+        height: fit-content;
+        background-color:rgb(47, 217, 255);
+        display: inline-grid;
+        padding: 15px;
+        border-radius: 5px;
+     }
+     #text{
+        padding: 17px;
+        border-radius: 5px;
+        border: none;
+     }
+     #button{
+        width: 20%;
+        border-radius: 5px;
+        border: none;
+        background-color: white;
+     }
+      
+    </style>
+</head>
+<body>
+<center>
+<button class="green"  onclick="cartitems=cartitems+1;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Add to Bag</button>
+<button class="wishlist" onclick="cartitems=cartitems-1;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Move to wishlist</button>
+<button class="green" onclick="cartitems=cartitems+2;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Add 1+1 Sale item</button>
+<h2 class="bag" ></h2>
+
+<div id="calculator">
+
+<input type="text" class="calc" id="text" readonly >
+<div class="buttons">
+<button class="calc" id="button"  onclick="currentValue=''; document.querySelector('#text').value =  currentValue;" >c</button>
+<button class="calc" id="button" onclick="currentValue+=1; document.querySelector('#text').value =  currentValue;" >1</button>
+<button class="calc" id="button" onclick="currentValue+=2; document.querySelector('#text').value =  currentValue;">2</button>
+<button class="calc" id="button" onclick="currentValue+='+'; document.querySelector('#text').value =  currentValue;">+</button>
+<button class="calc" id="button" onclick="currentValue+=3; document.querySelector('#text').value =  currentValue;">3</button>
+<button class="calc" id="button" onclick="currentValue+=4; document.querySelector('#text').value =  currentValue;">4</button>
+<button class="calc" id="button" onclick="currentValue+='-'; document.querySelector('#text').value =  currentValue;">-</button>
+<button class="calc" id="button" onclick="currentValue+=5; document.querySelector('#text').value =  currentValue;">5</button>
+<button class="calc" id="button" onclick="currentValue+=6; document.querySelector('#text').value =  currentValue;">6</button>
+<button class="calc" id="button" onclick="currentValue+='*'; document.querySelector('#text').value =  currentValue;">*</button>
+<button class="calc" id="button" onclick="currentValue+=7; document.querySelector('#text').value =  currentValue;">7</button>
+<button class="calc" id="button" onclick="currentValue+=8; document.querySelector('#text').value =  currentValue;">8</button>
+<button class="calc" id="button" onclick="currentValue+='/'; document.querySelector('#text').value =  currentValue;">/</button>
+<button class="calc" id="button" onclick="let result= eval(currentValue); currentValue = result; document.querySelector('#text').value =  currentValue;">=</button>
+<button class="calc" id="button" onclick="currentValue+=9; document.querySelector('#text').value =  currentValue;">9</button>
+<button class="calc" id="button" onclick="currentValue+=0; document.querySelector('#text').value =  currentValue;">0</button>
+<button class="calc" id="button" onclick="currentValue+='.'; document.querySelector('#text').value =  currentValue;" >.</button>
+</div>
+    </div>
+
+
+
+</center>
+<script>
+    let cartitems = 0 ;
+    let itemNumber = document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;
+    console.log(itemNumber)
+
+    let currentValue='';
+    document.querySelector('#text').value =  currentValue;
+ 
+</script>
+
+<!-- <div class="nav">
+    <div class="logo"><h2>Fluencify</h2></div>
+    <div class="list">
+ <ul>
+    <li><a href="/">Home</a></li>
+    <li class="dropdown"><a href="/">Courses</a>
+        <div class="dropdown-content">
+            <a href="/">Hindi</a>
+            <a href="/">English</a>
+    
+            <a href="/">Math</a>
+    
+        </div>
+        </li>
+    <li><a href="/">About us</a></li>
+
+    <li><a href="/">Contact us </a></li>
+    <li><a href="/" onclick="kallu()">  <i class="fa fa-bars"></i></a></li>
+
+    
+   
+
+ </ul>
+
+    </div>
+</div> -->
+
+    <!-- <script>
+        let b = "hello abhishke";
+        console.log(b)
+    </script> -->
+
+</body>
+</html>
