@@ -197,48 +197,25 @@
         <button class="calc" style="border-radius: 5px;" onclick=" 
 let computerChoice =  compChoice();
 let getWinner = getResult('bat',computerChoice);
+output('bat',computerChoice,getWinner)
 
-alert(` you have chosen bat , computer has chosen ${computerChoice} 
 
-${getWinner} 
-
-Won : ${game.won} 
-
-lost : ${game.lost}  
-
-tied : ${game.tied}`)
 
 ">Bat</button>
         <button class="calc" style="border-radius: 5px;" onclick="
 let computerChoice =  compChoice();
 let getWinner = getResult('ball',computerChoice);
 
-
-alert(` you have chosen ball , computer has chosen ${computerChoice} 
-
-${getWinner} 
-
-Won : ${game.won} 
-
-lost : ${game.lost}  
-
-tied : ${game.tied}`)">ball</button>
+output('ball',computerChoice,getWinner);
+">ball</button>
         <button class="calc" style="border-radius: 5px;" onclick="
 let computerChoice =  compChoice();
 let getWinner = getResult('wicket',computerChoice);
 
-
-alert(` you have chosen wicket , computer has chosen ${computerChoice} 
-
-${getWinner} 
-
-Won : ${game.won} 
-
-lost : ${game.lost}  
-
-tied : ${game.tied}`)">wicket</button>
-
-
+output('wicket',computerChoice,getWinner)
+">wicket</button>
+<button class="calc" style="border-radius: 5px;
+" onclick="localStorage.clear() ;game = {won:0,lost:0,tied:0,}">Reset</button>
 
     </center>
     <script>
@@ -249,11 +226,18 @@ tied : ${game.tied}`)">wicket</button>
         let currentValue = '';
         document.querySelector('#text').value = currentValue;
 
-let game = {
+
+
+let gameStr = localStorage.getItem("game");
+let game;
+if(gameStr !== undefined){
+    game = JSON.parse(gameStr);
+}else{        
+ game = {
     won : 0,
     lost : 0,
     tied : 0,
-}
+}}
         function compChoice() {
             let computerChoice;
             let randomChoice = Math.random() * 3;
@@ -278,6 +262,7 @@ let game = {
 
 
         function getResult(userMove, computerMove) {
+            
             if (userMove === 'bat') {
                 if (computerMove === "bat") {
                     game.tied ++;
@@ -335,7 +320,19 @@ let game = {
 
         }
 
+function output(userMove,computerMove,getWinner){
+localStorage.setItem('game',JSON.stringify(game));
+alert(` you have chosen ${userMove} , computer has chosen ${computerMove} 
 
+${getWinner} 
+
+Won : ${game.won} 
+
+lost : ${game.lost}  
+
+tied : ${game.tied}`)
+
+}
 
 
 
