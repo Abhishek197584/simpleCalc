@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,101 +8,112 @@
 	-awesome/4.7.0/css/font-awesome.min.css">
     <title>My Navbar </title>
     <style>
-        
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
-        .nav{
+
+        .nav {
             display: flex;
             justify-content: space-between;
-    align-items: stretch;
-    
-    background-color: black;
+            align-items: stretch;
+
+            background-color: black;
             overflow: hidden;
             padding: 1rem;
         }
-        .list ul li{
+
+        .list ul li {
             float: left;
-            list-style-type:none;
+            list-style-type: none;
         }
-        
-        .list ul li a{
+
+        .list ul li a {
             padding: 10px;
             text-decoration: none;
             font-size: 18px;
             color: white;
         }
-        .logo h2{
+
+        .logo h2 {
             color: white;
         }
-        a:hover{
+
+        a:hover {
             background-color: chartreuse;
             border-radius: 6px;
         }
-        li .dropdown{
+
+        li .dropdown {
             display: inline-block;
         }
-        li .dropdown-content{
+
+        li .dropdown-content {
             display: none;
             border-radius: 6px;
             margin-top: 10px;
 
         }
-        .dropdown:hover .dropdown-content{
-         display: block;
-         position:absolute;
-         background-color: black;
-         color: white;
-         z-index: 1;
-         min-width: 160px;
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: black;
+            color: white;
+            z-index: 1;
+            min-width: 160px;
         }
-        .dropdown-content a{
+
+        .dropdown-content a {
             display: block;
         }
 
-        button{
+        button {
             font-size: 2rem;
-            margin:1rem;
+            margin: 1rem;
             padding: 10px;
         }
-      .green{
-        background-color: #d5ff95;
-        border: none;
-        padding: 10px 40px;
-        border-radius: 20px;
-      }
-      .wishlist{
-        border: solid;
-        padding: 10px 50px;
-        border-radius: 20px;
-      }
 
-     #calculator{
-          margin: 3rem;
-        height: fit-content;
-        background-color:black;
-        display: inline-grid;
-        padding: 15px;
-        border-radius: 5px;
-     }
-     #text{
-        padding: 17px;
-        border-radius: 5px;
-        border: none;
-     }
-     #button{
-        width: 20%;
-        border-radius: 5px;
-        border: none;
-        background-color: white;
-     }
-      
+        .green {
+            background-color: #d5ff95;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 20px;
+        }
+
+        .wishlist {
+            border: solid;
+            padding: 10px 50px;
+            border-radius: 20px;
+        }
+
+        #calculator {
+            margin: 3rem;
+            height: fit-content;
+            background-color: black;
+            display: inline-grid;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        #text {
+            padding: 17px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #button {
+            width: 20%;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+        }
     </style>
 </head>
+
 <body>
-    
- <!-- <div class="nav">
+
+    <!-- <div class="nav">
     <div class="logo"><h2>Fluencify</h2></div>
     <div class="list">
  <ul>
@@ -127,123 +139,166 @@
 
     </div>
 </div>  -->
-<center>
-<button class="green"  onclick="cartitems=cartitems+1;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Add to Bag</button>
-<button class="wishlist" onclick="cartitems=cartitems-1;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Move to wishlist</button>
-<button class="green" onclick="cartitems=cartitems+2;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Add 1+1 Sale item</button>
-<h2 class="bag" ></h2>
+    <center>
+        <button class="green"
+            onclick="cartitems=cartitems+1;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Add
+            to Bag</button>
+        <button class="wishlist"
+            onclick="cartitems=cartitems-1;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Move
+            to wishlist</button>
+        <button class="green"
+            onclick="cartitems=cartitems+2;document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;">Add
+            1+1 Sale item</button>
+        <h2 class="bag"></h2>
 
-<div id="calculator">
+        <div id="calculator">
 
-<input type="text" class="calc" id="text" readonly >
-<div class="buttons">
-<button class="calc" id="button"  onclick="currentValue=''; document.querySelector('#text').value =  currentValue;" >c</button>
-<button class="calc" id="button" onclick="currentValue+=1; document.querySelector('#text').value =  currentValue;" >1</button>
-<button class="calc" id="button" onclick="currentValue+=2; document.querySelector('#text').value =  currentValue;">2</button>
-<button class="calc" id="button" onclick="currentValue+='+'; document.querySelector('#text').value =  currentValue;">+</button>
-<button class="calc" id="button" onclick="currentValue+=3; document.querySelector('#text').value =  currentValue;">3</button>
-<button class="calc" id="button" onclick="currentValue+=4; document.querySelector('#text').value =  currentValue;">4</button>
-<button class="calc" id="button" onclick="currentValue+='-'; document.querySelector('#text').value =  currentValue;">-</button>
-<button class="calc" id="button" onclick="currentValue+=5; document.querySelector('#text').value =  currentValue;">5</button>
-<button class="calc" id="button" onclick="currentValue+=6; document.querySelector('#text').value =  currentValue;">6</button>
-<button class="calc" id="button" onclick="currentValue+='*'; document.querySelector('#text').value =  currentValue;">*</button>
-<button class="calc" id="button" onclick="currentValue+=7; document.querySelector('#text').value =  currentValue;">7</button>
-<button class="calc" id="button" onclick="currentValue+=8; document.querySelector('#text').value =  currentValue;">8</button>
-<button class="calc" id="button" onclick="currentValue+='/'; document.querySelector('#text').value =  currentValue;">/</button>
-<button class="calc" id="button" onclick="let result= eval(currentValue); currentValue = result; document.querySelector('#text').value =  currentValue;">=</button>
-<button class="calc" id="button" onclick="currentValue+=9; document.querySelector('#text').value =  currentValue;">9</button>
-<button class="calc" id="button" onclick="currentValue+=0; document.querySelector('#text').value =  currentValue;">0</button>
-<button class="calc" id="button" onclick="currentValue+='.'; document.querySelector('#text').value =  currentValue;" >.</button>
-</div>
-    </div>
-<br>
-<h1>Bat ball Game </h1>
-<br>
-<button class="calc" style="border-radius: 5px;" 
-onclick=" 
-compChoice();
-computerMsg= `computer chosen ${computerChoice}`;
+            <input type="text" class="calc" id="text" readonly>
+            <div class="buttons">
+                <button class="calc" id="button"
+                    onclick="currentValue=''; document.querySelector('#text').value =  currentValue;">c</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=1; document.querySelector('#text').value =  currentValue;">1</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=2; document.querySelector('#text').value =  currentValue;">2</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+='+'; document.querySelector('#text').value =  currentValue;">+</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=3; document.querySelector('#text').value =  currentValue;">3</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=4; document.querySelector('#text').value =  currentValue;">4</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+='-'; document.querySelector('#text').value =  currentValue;">-</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=5; document.querySelector('#text').value =  currentValue;">5</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=6; document.querySelector('#text').value =  currentValue;">6</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+='*'; document.querySelector('#text').value =  currentValue;">*</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=7; document.querySelector('#text').value =  currentValue;">7</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=8; document.querySelector('#text').value =  currentValue;">8</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+='/'; document.querySelector('#text').value =  currentValue;">/</button>
+                <button class="calc" id="button"
+                    onclick="let result= eval(currentValue); currentValue = result; document.querySelector('#text').value =  currentValue;">=</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=9; document.querySelector('#text').value =  currentValue;">9</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+=0; document.querySelector('#text').value =  currentValue;">0</button>
+                <button class="calc" id="button"
+                    onclick="currentValue+='.'; document.querySelector('#text').value =  currentValue;">.</button>
+            </div>
+        </div>
+        <br>
+        <h1>Bat ball Game </h1>
+        <br>
+        <button class="calc" style="border-radius: 5px;" onclick=" 
+let computerChoice =  compChoice();
+let getWinner = getResult('bat',computerChoice);
 
-if(computerChoice===`Bat`){
-    resultMsg = `match tied`;
-}else if(computerChoice === `Ball`){
-     resultMsg = `You won`;
+alert(` You have chosen Bat | computer has chosen ${computerChoice} | ${getWinner} `)
 
-}
-else{
-    resultMsg = `computer won`;
-    
-}
-alert(` You have chosen Bat | ${computerMsg} | ${resultMsg}`)
-
-" >Bat</button>
-<button class="calc" style="border-radius: 5px;" onclick="
-compChoice();
-computerMsg= `computer chosen ${computerChoice}`;
-
-if(computerChoice===`Bat`){
-    resultMsg = `computer won`;
-}else if(computerChoice === `Ball`){
-     resultMsg = `match tied`;
-
-}
-else{
-    resultMsg = `you won`;
-    
-}
-alert(` you have chosen ball | ${computerMsg} | ${resultMsg}`)"
+">Bat</button>
+        <button class="calc" style="border-radius: 5px;" onclick="
+let computerChoice =  compChoice();
+let getWinner = getResult('ball',computerChoice);
 
 
->ball</button>
-<button class="calc"style="border-radius: 5px;" 
-onclick="
-compChoice();
-computerMsg= `computer chosen ${computerChoice}`;
+alert(` you have chosen ball | computer has chosen ${computerChoice} | ${getWinner}`)">ball</button>
+        <button class="calc" style="border-radius: 5px;" onclick="
+let computerChoice =  compChoice();
+let getWinner = getResult('wicket',computerChoice);
 
-if(computerChoice===`Bat`){
-    resultMsg = `you won`;
-}else if(computerChoice === `Ball`){
-     resultMsg = `computer won`;
 
-}
-else{
-    resultMsg = `match tied`;
-    
-}
-alert(` you have chosen wicket | ${computerMsg} | ${resultMsg}`)"
-
->wicket</button>
+alert(` you have chosen wicket | computer has chosen ${computerChoice} | ${getWinner}`)">wicket</button>
 
 
 
-</center>
-<script>
-    let cartitems = 0 ;
-    let itemNumber = document.querySelector('.bag').innerHTML=`your cart has  ${cartitems}    items`;
-    console.log(itemNumber)
+    </center>
+    <script>
+        let cartitems = 0;
+        let itemNumber = document.querySelector('.bag').innerHTML = `your cart has  ${cartitems}    items`;
+        console.log(itemNumber)
 
-    let currentValue='';
-    document.querySelector('#text').value =  currentValue;
+        let currentValue = '';
+        document.querySelector('#text').value = currentValue;
 
-    let computerChoice ;
-    function compChoice(){
-        let randomChoice = Math.random() * 3;
 
-if(randomChoice>0 && randomChoice<=1){
-    computerChoice = `Bat`;
-   
-}
- else if(randomChoice>1 && randomChoice<=2){
-    computerChoice=`Ball`;
-    
-}
- else {
-    computerChoice=`Wicket`;
-    
-}
-    }
- 
-</script>
+        function compChoice() {
+            let computerChoice;
+            let randomChoice = Math.random() * 3;
+
+            if (randomChoice > 0 && randomChoice <= 1) {
+                computerChoice = `bat`;
+
+            }
+            else if (randomChoice > 1 && randomChoice <= 2) {
+                computerChoice = `ball`;
+
+            }
+            else {
+                computerChoice = `wicket`;
+
+            }
+            return computerChoice;
+        }
+
+
+
+
+        function getResult(userMove, computerMove) {
+            if (userMove === 'bat') {
+                if (computerMove === "bat") {
+                    return "match tied";
+
+                } else if (computerMove === "ball") {
+                    return "you won";
+
+
+                }
+                else {
+                    return "computer won";
+
+                }
+            }
+
+            else if (userMove === 'ball') {
+                if (computerMove === "bat") {
+                    return "computer won";
+
+                } else if (computerMove === "ball") {
+                    return "match tied";
+
+
+                }
+                else {
+                    return "you won";
+
+                }
+            }
+            else  {
+                if (computerMove === "bat") {
+                    return "you won";
+
+                } else if (computerMove === "ball") {
+                    return "computer won";
+
+
+                }
+                else {
+                    return "match tied";
+
+                }
+            }
+
+        }
+
+
+
+
+    </script>
 
 
     <!-- <script>
@@ -252,4 +307,5 @@ if(randomChoice>0 && randomChoice<=1){
     </script> -->
 
 </body>
+
 </html>
