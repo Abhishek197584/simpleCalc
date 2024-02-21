@@ -198,7 +198,15 @@
 let computerChoice =  compChoice();
 let getWinner = getResult('bat',computerChoice);
 
-alert(` You have chosen Bat | computer has chosen ${computerChoice} | ${getWinner} `)
+alert(` you have chosen bat , computer has chosen ${computerChoice} 
+
+${getWinner} 
+
+Won : ${game.won} 
+
+lost : ${game.lost}  
+
+tied : ${game.tied}`)
 
 ">Bat</button>
         <button class="calc" style="border-radius: 5px;" onclick="
@@ -206,13 +214,29 @@ let computerChoice =  compChoice();
 let getWinner = getResult('ball',computerChoice);
 
 
-alert(` you have chosen ball | computer has chosen ${computerChoice} | ${getWinner}`)">ball</button>
+alert(` you have chosen ball , computer has chosen ${computerChoice} 
+
+${getWinner} 
+
+Won : ${game.won} 
+
+lost : ${game.lost}  
+
+tied : ${game.tied}`)">ball</button>
         <button class="calc" style="border-radius: 5px;" onclick="
 let computerChoice =  compChoice();
 let getWinner = getResult('wicket',computerChoice);
 
 
-alert(` you have chosen wicket | computer has chosen ${computerChoice} | ${getWinner}`)">wicket</button>
+alert(` you have chosen wicket , computer has chosen ${computerChoice} 
+
+${getWinner} 
+
+Won : ${game.won} 
+
+lost : ${game.lost}  
+
+tied : ${game.tied}`)">wicket</button>
 
 
 
@@ -225,12 +249,17 @@ alert(` you have chosen wicket | computer has chosen ${computerChoice} | ${getWi
         let currentValue = '';
         document.querySelector('#text').value = currentValue;
 
-
+let game = {
+    won : 0,
+    lost : 0,
+    tied : 0,
+}
         function compChoice() {
             let computerChoice;
             let randomChoice = Math.random() * 3;
 
             if (randomChoice > 0 && randomChoice <= 1) {
+
                 computerChoice = `bat`;
 
             }
@@ -251,14 +280,17 @@ alert(` you have chosen wicket | computer has chosen ${computerChoice} | ${getWi
         function getResult(userMove, computerMove) {
             if (userMove === 'bat') {
                 if (computerMove === "bat") {
+                    game.tied ++;
                     return "match tied";
 
                 } else if (computerMove === "ball") {
+                    game.won ++;
                     return "you won";
 
 
                 }
                 else {
+                    game.lost++;
                     return "computer won";
 
                 }
@@ -266,28 +298,36 @@ alert(` you have chosen wicket | computer has chosen ${computerChoice} | ${getWi
 
             else if (userMove === 'ball') {
                 if (computerMove === "bat") {
+                    game.lost++;
                     return "computer won";
 
                 } else if (computerMove === "ball") {
+                    game.tied ++;
                     return "match tied";
 
 
                 }
                 else {
+                    game.won ++;
+
                     return "you won";
 
                 }
             }
             else  {
                 if (computerMove === "bat") {
+                    game.won ++;
+
                     return "you won";
 
                 } else if (computerMove === "ball") {
+                    game.lost++;
                     return "computer won";
 
 
                 }
                 else {
+                    game.tied ++;
                     return "match tied";
 
                 }
@@ -297,6 +337,19 @@ alert(` you have chosen wicket | computer has chosen ${computerChoice} | ${getWi
 
 
 
+
+
+
+        let product = {
+            company : "nike",
+            price : 80,
+            name : "nike cotton shoe",
+        }
+        console.log(product.price);
+        console.log(product.name);
+
+delete product.company;
+console.log(product)
 
     </script>
 
