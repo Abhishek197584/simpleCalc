@@ -160,21 +160,8 @@
 <h1>Bat ball Game </h1>
 <br>
 <button class="calc" style="border-radius: 5px;" 
-onclick=" yourMsg= `you have clicked bat `;
-let randomChoice = Math.random() * 3;
-let computerChoice ;
-if(randomChoice>0 && randomChoice<=1){
-    computerChoice = `Bat`;
-   
-}
- else if(randomChoice>1 && randomChoice<=2){
-    computerChoice=`Ball`;
-    
-}
- else {
-    computerChoice=`Wicket`;
-    
-}
+onclick=" 
+compChoice();
 computerMsg= `computer chosen ${computerChoice}`;
 
 if(computerChoice===`Bat`){
@@ -187,24 +174,11 @@ else{
     resultMsg = `computer won`;
     
 }
-alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)
+alert(` You have chosen Bat | ${computerMsg} | ${resultMsg}`)
 
 " >Bat</button>
-<button class="calc" style="border-radius: 5px;" onclick="yourMsg= `you have clicked ball `;
-let randomChoice = Math.random() * 3;
-let computerChoice ;
-if(randomChoice>0 && randomChoice<=1){
-    computerChoice = `Bat`;
-   
-}
- else if(randomChoice>1 && randomChoice<=2){
-    computerChoice=`Ball`;
-    
-}
- else {
-    computerChoice=`Wicket`;
-    
-}
+<button class="calc" style="border-radius: 5px;" onclick="
+compChoice();
 computerMsg= `computer chosen ${computerChoice}`;
 
 if(computerChoice===`Bat`){
@@ -217,26 +191,13 @@ else{
     resultMsg = `you won`;
     
 }
-alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)"
+alert(` you have chosen ball | ${computerMsg} | ${resultMsg}`)"
 
 
 >ball</button>
 <button class="calc"style="border-radius: 5px;" 
-onclick="yourMsg= `you have clicked wicket `;
-let randomChoice = Math.random() * 3;
-let computerChoice ;
-if(randomChoice>0 && randomChoice<=1){
-    computerChoice = `Bat`;
-   
-}
- else if(randomChoice>1 && randomChoice<=2){
-    computerChoice=`Ball`;
-    
-}
- else {
-    computerChoice=`Wicket`;
-    
-}
+onclick="
+compChoice();
 computerMsg= `computer chosen ${computerChoice}`;
 
 if(computerChoice===`Bat`){
@@ -249,9 +210,11 @@ else{
     resultMsg = `match tied`;
     
 }
-alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)"
+alert(` you have chosen wicket | ${computerMsg} | ${resultMsg}`)"
 
 >wicket</button>
+
+
 
 </center>
 <script>
@@ -261,6 +224,24 @@ alert(` ${yourMsg} | ${computerMsg} | ${resultMsg}`)"
 
     let currentValue='';
     document.querySelector('#text').value =  currentValue;
+
+    let computerChoice ;
+    function compChoice(){
+        let randomChoice = Math.random() * 3;
+
+if(randomChoice>0 && randomChoice<=1){
+    computerChoice = `Bat`;
+   
+}
+ else if(randomChoice>1 && randomChoice<=2){
+    computerChoice=`Ball`;
+    
+}
+ else {
+    computerChoice=`Wicket`;
+    
+}
+    }
  
 </script>
 
