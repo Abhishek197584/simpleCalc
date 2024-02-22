@@ -108,6 +108,10 @@
             border: none;
             background-color: white;
         }
+        .img {
+            width: 7rem;
+            border-radius: 70px;
+        }
     </style>
 </head>
 
@@ -194,28 +198,36 @@
         <br>
         <h1>Bat ball Game </h1>
         <br>
-        <button class="calc" style="border-radius: 5px;" onclick=" 
+        <button class="calc" style="border-radius: 70px; border: none; background: #2e4c2e;" onclick=" 
 let computerChoice =  compChoice();
 let getWinner = getResult('bat',computerChoice);
 output('bat',computerChoice,getWinner)
 
 
 
-">Bat</button>
-        <button class="calc" style="border-radius: 5px;" onclick="
+"><img src="img/bat.svg" class="img"> </button>
+        <button class="calc" style="border-radius: 70px; border: none; background: #2e4c2e;" onclick="
 let computerChoice =  compChoice();
 let getWinner = getResult('ball',computerChoice);
 
 output('ball',computerChoice,getWinner);
-">ball</button>
-        <button class="calc" style="border-radius: 5px;" onclick="
+"> <img src="img/ball.svg" class="img">     </button>
+        <button class="calc" style="border-radius: 70px; border: none; background: #2e4c2e;" onclick="
 let computerChoice =  compChoice();
 let getWinner = getResult('wicket',computerChoice);
 
 output('wicket',computerChoice,getWinner)
-">wicket</button>
+"> <img src="img/wicket.svg" class="img"> </button>
+
+
+
+<h3 id="user-move"></h3>
+<h3 id="computer-move"></h3>
+<h3 id="result"></h3>
+<h3 id="score"></h3>
+
 <button class="calc" style="border-radius: 5px;
-" onclick="localStorage.clear() ;game = {won:0,lost:0,tied:0,}">Reset</button>
+" onclick="localStorage.clear() ;game = {won:0,lost:0,tied:0,}; output()">Reset</button>
 
     </center>
     <script>
@@ -322,15 +334,16 @@ if(gameStr !== undefined){
 
 function output(userMove,computerMove,getWinner){
 localStorage.setItem('game',JSON.stringify(game));
-alert(` you have chosen ${userMove} , computer has chosen ${computerMove} 
+document.querySelector('#user-move').innerHTML = 
+userMove !== undefined ? `you have chosen ${userMove}` : '';
+document.querySelector('#computer-move').innerHTML = 
+computerMove !== undefined ?  `you have chosen ${computerMove}` : '';
+document.querySelector('#result').innerHTML = 
+getWinner !== undefined ? ` ${getWinner}` : '';
+document.querySelector('#score').innerHTML = `Score -
+won : ${game.won} Lost : ${game.lost} Tied : ${game.tied}
+`;
 
-${getWinner} 
-
-Won : ${game.won} 
-
-lost : ${game.lost}  
-
-tied : ${game.tied}`)
 
 }
 
